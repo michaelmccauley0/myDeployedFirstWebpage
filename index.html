@@ -1,110 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>My Favorite Books</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      text-align: center;
+      font-size: 25px;
+    }
+
+    h2 {
+      text-decoration: underline;
+      font-style: italic;
+    }
+    
+    ol {
+      list-style-position: inside;
+      padding: 0;
+      margin: 0;
+    }
+
+    .changeWhenHover {
+      transition: background-color 0.3s;
+
+    }
+
+    .changeWhenHover:hover {
+      background-color: rgb(240, 240, 240);
+    }
+    
+    ol li:nth-child(2n+2) {
+      text-decoration: underline;
+    }
+
+    ol li:nth-child(2n+1) {
+      font-style: italic;
+    }
+
+    .box {
+      box-sizing: border-box;
+      padding: 15px;
+      border: 5px solid black;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .left-column {
+      grid-column: 1;
+    }
+
+    .right-column {
+      grid-column: 2;
+    }
+
+    .both-columns {
+      grid-column: 1 / 3;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .section {
+      flex: 1 1 45%;
+      min-width: 300px;
+      margin: 1rem;
+      padding: 1rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -1000px;
+      top: auto;
+      background: #7a7a7a;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      position: static;
+      left: auto;
+      top: auto;
+    }
+
+    .extra-space {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .space-below {
+      margin-bottom: 1em;
+    }
+  </style>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <main>
-    <h1>My Favorite Books</h1>
-    <p>These are some of the best books that I have read in the last few years.</p>
-
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+  <h1>My Favorite Books</h1>
+  <p>These are some of the best books that I have read in the last few years.</p>
+  <div class="grid-container">
     <p><a href=#realFiction>Realistic Fiction</a></p>
     <p><a href=#warBooks>War Books</a></p>
     <p><a href=#scienceFictionFantasy>Science Fiction/Fantasy</a></p>
     <a href=#booksIWantToRead>Books I Want to Read</a>
+  </div>
 
-    <div id="realFiction">
+  <main id="main-content" class="flex-container">
+    <div id="realFiction" class="left-column">
       <h2>Best Realistic Fiction Books:</h2>
-      <ol>
-        <li><b>Wonder</b> by R. J. Palacio</li>
-        <p></p>
-        <img width=20% height=20% src="wonderCover.png">
-        <p></p>
-        <li><b>The Hate U Give</b> by Angie Thomas</li>
-        <p></p>
-        <img width=20% height=20% src="theHateUGive.jpg">
-        <p></p>
-        <li><b>Sweetgrass Basket</b> by Marlene Carvell</li>
-        <p></p>
-        <img width=20% height=20% src="sweetgrassBasket.jpg">
-        <p></p>
-        <li><b>Shiloh</b> by Phyllis Reynolds Naylor</li>
-        <p></p>
-        <img width=20% height=20% src="shilohCover.jpg">
+      <ol class="underline-then-italicize">
+        <li class="space-below changeWhenHover">
+          <b>The Hate U Give</b> by Angie Thomas
+          <br><br>
+          <img class="box" width=20% height=20% alt="The Hate U Give Cover" src="theHateUGive.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Wonder</b> by R. J. Palacio
+          <br><br>
+          <img class="box" width=20% height=20% alt="Wonder Cover" src="wonderCover.png">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Sweetgrass Basket</b> by Marlene Carvell
+          <br><br>
+          <img class="box" width=20% height=20% alt="Sweetgrass Basket Cover" src="sweetgrassBasket.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Shiloh</b> by Phyllis Reynolds Naylor
+          <br><br>
+          <img class="box" width=20% height=20% alt="Shiloh Cover" src="shilohCover.jpg">
+        </li>
       </ol>
     </div>
 
-    <div id="warBooks">
+    <div id="warBooks" class="right-column">
       <h2>Best War Books:</h2>
-      <ol>
-        <li><b>Beneath a Scarlet Sky</b> by Mark Sullivan</li>
-        <p></p>
-        <img width=20% height=20% src="beneathAScarletSky.jpg">
-        <p></p>
-        <li><b>Lone Survivor</b> by Marcus Lutrell</li>
-        <p></p>
-        <img width=20% height=20% src="loneSurvivor.jpg">
-        <p></p>
-        <li><b>The Edge</b> by Roland Smith</li>
-        <p></p>
-        <img width=20% height=20% src="theEdge.jpg">
-        <p></p>
-        <li><b>Night</b> by Elie Wiesel</li>
-        <p></p>
-        <img width=20% height=20% src="nightCover.jpg">
+      <ol class="underline-then-italicize">
+        <li class="space-below changeWhenHover">
+          <b>Beneath a Scarlet Sky</b> by Mark Sullivan
+          <br><br>
+          <img class="box" width=20% height=20% alt="Beneath A Scarlet Sky Cover" src="beneathAScarletSky.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Lone Survivor</b> by Marcus Lutrell
+          <br><br>
+          <img class="box" width=20% height=20% alt="Lone Survivor Cover" src="loneSurvivor.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>The Edge</b> by Roland Smith
+          <br><br>
+          <img class="box" width=20% height=20% alt="The Edge Cover" src="theEdge.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Night</b> by Elie Wiesel
+          <br><br>
+          <img class="box" width=20% height=20% alt="Night Cover" src="nightCover.jpg">
+        </li>
       </ol>
     </div>
 
-    <div id="scienceFictionFantasy">
+    <div id="scienceFictionFantasy" class="left-column">
       <h2>Best Science Fiction/Fantasy Books:</h2>
-      <ol>
-        <li><b>Percy Jackson: The Last Olympian</b> by Rick Riordan</li>
-        <p></p>
-        <img width=20% height=20% src="pjoTheLastOlympian.jpg">
-        <p></p>
-        <li><b>The Martian</b> by Andy Weir</li>
-        <p></p>
-        <img width=20% height=20% src="theMartian.jpg">
-        <p></p>
-        <li><b>Project Hail Mary</b> by Andy Weir</li>
-        <p></p>
-        <img width=20% height=20% src="projectHailMary.jpg">
-        <p></p>
-        <li><b>Heroes of Olympus: The Lost Hero</b> by Rick Riordan</li>
-        <p></p>
-        <img width=20% height=20% src="theLostHero.jpg">
+      <ol class="underline-then-italicize">
+        <li class="space-below changeWhenHover">
+          <b>Percy Jackson: The Last Olympian</b> by Rick Riordan
+          <br><br>
+          <img class="box" width=20% height=20% alt="The Last Olympian Cover" src="pjoTheLastOlympian.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>The Martian</b> by Andy Weir
+          <br><br>
+          <img class="box" width=20% height=20% alt="The Martian Cover" src="theMartian.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Project Hail Mary</b> by Andy Weir
+          <br><br>
+          <img class="box" width=20% height=20% alt="Project Hail Mary Cover" src="projectHailMary.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Heroes of Olympus: The Lost Hero</b> by Rick Riordan
+          <br><br>
+          <img class="box" width=20% height=20% alt="The Lost Hero Cover" src="theLostHero.jpg">
+        </li>
       </ol>
     </div>
 
-    <div id="booksIWantToRead">
+    <div id="booksIWantToRead" class="right-column">
       <h2>Bonus - Books I Want to Read:</h2>
-      <ol>
-        <li><b>Ready Player One</b> by Ernest Cline</li>
-        <p></p>
-        <img width=20% height=20% src="readyPlayerOne.jpg">
-        <p></p>
-        <li><b>1984</b> by George Orwell</li>
-        <p></p>
-        <img width=20% height=20% src="1984Cover.jpg">
-        <p></p>
-        <li><b>I Know Why the Caged Bird Sings</b> by Maya Angelou</li>
-        <p></p>
-        <img width=20% height=20% src="iKnowWhyTheCagedBirdSings.jpg">
-        <p></p>
-        <li><b>Kafka on the Shore</b> by Haruki Murakami</li>
-        <p></p>
-        <img width=20% height=20% src="kafkaOnTheShore.jpg">
+      <ol class="underline-then-italicize">
+        <li class="space-below changeWhenHover">
+          <b>Ready Player One</b> by Ernest Cline
+          <br><br>
+          <img class="box" width=20% height=20% alt="Ready Player One Cover" src="readyPlayerOne.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>1984</b> by George Orwell
+          <br><br>
+          <img class="box" width=20% height=20% alt="1984 Cover" src="1984Cover.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>I Know Why the Caged Bird Sings</b> by Maya Angelou
+          <br><br>
+          <img class="box" width=20% height=20% alt="I Know Why the Caged Bird Sings Cover" src="iKnowWhyTheCagedBirdSings.jpg">
+        </li>
+        <li class="extra-space changeWhenHover">
+          <b>Kafka on the Shore</b> by Haruki Murakami
+          <br><br>
+          <img class="box" width=20% height=20% alt="Kafka On the Shore Cover" src="kafkaOnTheShore.jpg">
+        </li>
       </ol>
     </div>
-
-    <footer>Michael McCauley 10.08.2024</footer>
     <script src="script.js"></script>
   </main>
+  <footer>Michael McCauley 11.2.2024</footer>
 </body>
 
 </html>
